@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <DocumentationFile>..\Evo.Scm.HttpApi.Host.Mobile\Notes\EvoApplicationMobileContracts.xml</DocumentationFile>
+        <RootNamespace>Evo.Scm</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Masuit.Tools.Core" Version="2.6.3.1" />
+      <PackageReference Include="Microsoft.OpenApi" Version="1.6.4" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+      <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.1.117" />
+      <PackageReference Include="Volo.Abp.Core" Version="7.3.0" />
+      <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.3.0" />
+      <PackageReference Include="Volo.Abp.FluentValidation" Version="7.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+		<ProjectReference Include="..\..\..\evo.user\src\Evo.User.Application.Contracts\Evo.User.Application.Contracts.csproj" />
+      <ProjectReference Include="..\Evo.Scm.Domain.Shared\Evo.Scm.Domain.Shared.csproj" />
+      <ProjectReference Include="..\Evo.Scm.Infrastructure.Shared\Evo.Scm.Infrastructure.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

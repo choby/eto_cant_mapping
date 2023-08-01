@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Evo.Scm</RootNamespace>
+    <Configurations>Debug;Release;Test</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'">
+    <NoWarn>1701;1702;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Authorization\model.conf" />
+    <None Remove="EFCore.BulkExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Casbin.NET" Version="1.13.7" />
+    <PackageReference Include="Casbin.NET.Adapter.EFCore" Version="1.8.1" />
+    <PackageReference Include="Imageflow.Server" Version="0.7.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.4" />
+    <PackageReference Include="NPOI" Version="2.6.0" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="Sentry" Version="3.31.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.1.117" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.Core" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.ExceptionHandling" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="7.3.0" />
+    <PackageReference Include="Winton.Extensions.Configuration.Consul" Version="3.3.0" />
+ 
+  <PackageReference Include="EFCore.BulkExtensions" Version="7.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Evo.Scm.Domain\Evo.Scm.Domain.csproj" />
+    <ProjectReference Include="..\Evo.Scm.Infrastructure.Shared\Evo.Scm.Infrastructure.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SupplierIsolation\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>Evo.Scm</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>..\Evo.Scm.HttpApi.Host\Notes\EvoApplication.xml</DocumentationFile>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>$(NoWarn);CS1591;CS8632;</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Evo.Scm.Domain\Evo.Scm.Domain.csproj" />
+		<ProjectReference Include="..\Evo.Scm.Application.Contracts\Evo.Scm.Application.Contracts.csproj" />
+		<ProjectReference Include="..\Evo.Scm.EntityFrameworkCore\Evo.Scm.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\Evo.Scm.Infrastructure.Shared\Evo.Scm.Infrastructure.Shared.csproj" />
+		
+		<ProjectReference Include="..\Evo.Scm.Infrastructure\Evo.Scm.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EasyAbp.NotificationService.Provider.Mailing" Version="2.3.0" />
+
+		<PackageReference Include="EasyAbp.NotificationService.Provider.PrivateMessaging" Version="2.3.0" />
+		<PackageReference Include="EasyAbp.NotificationService.Provider.Sms" Version="2.3.0" />
+
+		<PackageReference Include="Masuit.Tools.AspNetCore" Version="1.2.3.1" />
+		<PackageReference Include="Masuit.Tools.Core" Version="2.6.3.1" />
+		<PackageReference Include="Microsoft.Playwright" Version="1.31.0" />
+		<PackageReference Include="Sentry" Version="3.31.0" />
+		<PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.1.117" />
+		<PackageReference Include="Volo.Abp.BlobStoring" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.BlobStoring.Aliyun" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.Core" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.DistributedLocking" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.3.0" />
+	</ItemGroup>
+
+</Project>

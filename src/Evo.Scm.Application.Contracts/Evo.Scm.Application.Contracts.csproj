@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>Evo.Scm</RootNamespace>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>..\Evo.Scm.HttpApi.Host\Notes\EvoApplicationContracts.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>$(NoWarn);CS1591;CS8632;</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NoWarn>$(NoWarn);CS1591;CS8632;</NoWarn>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\Evo.Scm.Domain.Shared\Evo.Scm.Domain.Shared.csproj" />
+		
+		<ProjectReference Include="..\Evo.Scm.Infrastructure.Shared\Evo.Scm.Infrastructure.Shared.csproj" />
+		<ProjectReference Include="..\Evo.Scm.Infrastructure\Evo.Scm.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EasyAbp.NotificationService.Provider.Mailing.Abstractions" Version="2.3.0" />
+		<PackageReference Include="EasyAbp.NotificationService.Provider.PrivateMessaging.Abstractions" Version="2.3.0" />
+		<PackageReference Include="EasyAbp.NotificationService.Provider.Sms.Abstractions" Version="2.3.0" />
+		<PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.1.117" />
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.FluentValidation" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.ObjectExtending" Version="7.3.0" />
+	</ItemGroup>
+
+</Project>

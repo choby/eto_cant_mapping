@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>Evo.Scm</RootNamespace>
+    <Configurations>Debug;Release;Test</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>$(NoWarn);CS1591;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>$(NoWarn);CS1591;CS8632</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'">
+    <NoWarn>$(NoWarn);CS1591;CS8632</NoWarn>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\Evo.Scm.Domain.Shared\Evo.Scm.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Evo.Scm.Infrastructure.Shared\Evo.Scm.Infrastructure.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Casbin.NET" Version="1.13.7" />
+    <PackageReference Include="EasyAbp.NotificationService.Domain" Version="2.3.0" />
+    <PackageReference Include="Masuit.Tools.Core" Version="2.6.3.1" />
+    <PackageReference Include="TinyPinyin" Version="1.1.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.2" />
+    <PackageReference Include="Volo.Abp.Emailing" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.BackgroundJobs.Domain" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.Domain" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.Identity.Domain" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.Specifications" Version="7.3.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Domain" Version="7.3.0" />
+
+   
+    <PackageReference Include="EFCore.BulkExtensions" Version="7.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="EFCore.BulkExtensions" />
+  </ItemGroup>
+</Project>

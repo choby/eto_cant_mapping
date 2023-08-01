@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Evo.Scm</RootNamespace>
+		<Configurations>Debug;Release;Test</Configurations>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<NoWarn>1701;1702;CS8632</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<NoWarn>1701;1702;CS8632</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Test|AnyCPU'">
+		<NoWarn>1701;1702;CS8632</NoWarn>
+	</PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="EasyAbp.NotificationService.Provider.Mailing.Abstractions" Version="2.3.0" />
+	  <PackageReference Include="EasyAbp.NotificationService.Provider.PrivateMessaging.Abstractions" Version="2.3.0" />
+	  <PackageReference Include="EasyAbp.NotificationService.Provider.Sms.Abstractions" Version="2.3.0" />
+	  <PackageReference Include="Evo.Feishu" Version="1.0.3" />
+	  <PackageReference Include="NPOI" Version="2.6.0" />
+	  <PackageReference Include="ObjectsComparer" Version="1.4.1" />
+	  <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.1.117" />
+	  <PackageReference Include="Volo.Abp.BlobStoring.Aliyun" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.Core" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.MultiTenancy" Version="7.3.0" />
+	  <PackageReference Include="Volo.Abp.SettingManagement.Domain" Version="7.3.0" />
+	  <PackageReference Include="Masuit.Tools.Core" Version="2.6.3.1" />
+	  <PackageReference Include="EFCore.BulkExtensions" Version="7.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Masuit.Tools.Core" />
+    <None Remove="EFCore.BulkExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Evo.Scm.Domain.Shared\Evo.Scm.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Evo.User.Application.Contracts">
+      <HintPath>..\..\..\evo.user\src\Evo.User.Application.Contracts\bin\Debug\net7.0\Evo.User.Application.Contracts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
